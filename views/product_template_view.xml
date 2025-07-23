@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="product_template_form_view">
+        <field name="name">Product template form view (with multi-company)</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view" />
+        <field name="arch" type="xml">
+            <!-- Hide the original company_id field -->
+            <xpath
+                expr="//page[@name='general_information']//field[@name='company_id']"
+                position="attributes"
+            >
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <!-- Add the company_ids field after the original company_id -->
+            <xpath
+                expr="//page[@name='general_information']//field[@name='company_id']"
+                position="after"
+            >
+                <field
+                    name="company_ids"
+                    groups="base.group_multi_company"
+                    widget="many2many_tags"
+                    options="{'no_create': True}"
+                />
+            </xpath>
+            <!-- Trick for allowing to set this field via Form -->
+            <xpath expr="//header" position="inside">
+                <field name="company_id" invisible="1" />
+            </xpath>
+        </field>
+    </record>
+</odoo>

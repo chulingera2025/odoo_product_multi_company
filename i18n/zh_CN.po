@@ -1,0 +1,26 @@
+# 产品多公司模块的中文翻译
+
+#. module: odoo_product_multi_company
+#: model:ir.model.fields,field_description:odoo_product_multi_company.field_product_template__company_ids
+msgid "Companies"
+msgstr "公司"
+
+#. module: odoo_product_multi_company
+#: model:ir.model.fields,field_description:odoo_product_multi_company.field_product_template__company_id
+msgid "Company"
+msgstr "公司"
+
+#. module: odoo_product_multi_company
+#: model:ir.model,name:odoo_product_multi_company.model_multi_company_abstract
+msgid "Multi-Company Abstract"
+msgstr "多公司抽象"
+
+#. module: odoo_product_multi_company
+#: model:ir.model,name:odoo_product_multi_company.model_product_template
+msgid "Product Template"
+msgstr "产品模板"
+
+#. module: odoo_product_multi_company
+#: model:ir.ui.view,name:odoo_product_multi_company.product_template_form_view
+msgid "Product template form view (with multi-company)"
+msgstr "产品模板表单视图（多公司）"
